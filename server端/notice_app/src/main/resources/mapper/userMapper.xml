@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="denggao.wechat.Dao.UserMapper">
+
+    <!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="denggao.wechat.Beans.UserVo" id="userMap">
+        <result property="userId" column="id"/>
+        <result property="nickName" column="nick_name"/>
+        <result property="avatarUrl" column="avatar_url"/>
+        <result property="country" column="country"/>
+        <result property="province" column="province"/>
+        <result property="city" column="city"/>
+        <result property="phoneNumber" column="phone_number"/>
+        <result property="email" column="email"/>
+        <result property="registerTime" column="register_time"/>
+    </resultMap>
+
+    <select id="selectUser" resultMap="userMap">
+		select * from user
+	</select>
+    
+    <select id="selectHaveUser" resultType="int">
+        select count(*) from user where nick_name = #{nickname} or phone_number = #{phonenumber};
+    </select>
+
+    <insert id="registerUser" parameterType="denggao.wechat.Beans.UserVo">
+        insert into user(nick_name, avatar_url, country, province, city, phone_number, email, register_time)
+        values (#{nickName}, #{avatarUrl}, #{country}, #{province}, #{city}, #{phoneNumber}, #{email}, #{registerTime} )
+    </insert>
+
+
+</mapper>

@@ -1,0 +1,15 @@
+{
+  "usingComponents": {
+    "vtu-swiper": "/a_plugin//vtuweapp/swiper/vtu-swiper",
+    "i-grid": "/a_plugin/iview/grid/index",
+    "i-grid-item": "/a_plugin/iview/grid-item/index",
+    "i-grid-icon": "/a_plugin/iview/grid-icon/index",
+    "i-grid-label": "/a_plugin/iview/grid-label/index",
+    "i-divider": "/a_plugin/iview/divider/index",
+    "i-sticky": "/a_plugin/iview/sticky/index",
+    "i-sticky-item": "/a_plugin/iview/sticky-item/index",
+    "i-tabs": "/a_plugin/iview/tabs/index",
+    "i-tab": "/a_plugin/iview/tab/index"
+    
+  }
+}

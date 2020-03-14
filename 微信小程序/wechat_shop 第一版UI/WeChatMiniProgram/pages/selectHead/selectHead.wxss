@@ -1,0 +1,92 @@
+.page-section-gap{
+  box-sizing: border-box;
+  padding: 0 30rpx;
+}
+
+.page-body-button {
+  margin-bottom: 30rpx;
+}
+
+
+
+
+
+
+
+
+/* 团长 */
+.head_view {
+  height: 200rpx;
+  background: #fff;
+  margin-top: 10rpx;
+  display: flex;
+  flex-flow: row; 
+}
+.head_menu1 {
+  width: 600rpx;
+  height: 180rpx;
+  margin: 10rpx 0rpx 10rpx 10rpx;
+  background: #fff;
+  display: flex;
+  flex-flow: row;
+}
+.head_menu1_im {
+  width: 120rpx;
+  height: 120rpx;
+  margin: 30rpx;
+}
+.head_menu1_im2 {
+  width: 140rpx;
+  height: 140rpx;
+  margin: 20rpx;
+}
+.head_menu1_im image{
+  width: 100%;
+  height: 100%;
+}
+.head_menu1_m {
+  width: 420rpx;
+  height: 160rpx;
+  margin: 10rpx 10rpx 10rpx 10rpx;
+  display: flex;
+  flex-flow: column;
+}
+.head_menu1_m text{
+  font-size: 22rpx;
+  line-height: 40rpx;
+  margin-top: 7rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp:1;
+  -webkit-box-orient: vertical;
+}
+.head_menu1_m_nick {
+  display: flex;
+  flex-flow: row;
+  width: auto;
+  height: 50rpx;
+  margin: 0rpx 0rpx 18rpx 0rpx;
+
+}
+.head_menu1_m_nick text{
+  font-size: 30rpx;
+  line-height: 34rpx;
+  margin-top: 10rpx;
+  margin-right: 8rpx;
+}
+.head_menu1_m_nick_nameplateim{
+  width:60rpx;
+  height: 30rpx;
+  background: #ff9600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15rpx;
+  margin: 11rpx 5rpx 7rpx 5rpx;
+  border-radius: 20rpx;
+}
+.head_menu1_m_nick_nameplateim text{
+  font-size: 15rpx;
+  line-height: 34rpx;
+}
