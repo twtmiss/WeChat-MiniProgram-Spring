@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="wechat_shop.Dao.ArticleDao">
+
+    <!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="wechat_shop.Bean.ArticleBean" id="ArticleMap">
+        <result property="articleId" column="article_id"/>
+        <result property="coverImgUrl" column="cover_img_url"/>
+        <result property="articleMarkdown" column="article_markdown"/>
+        <result property="isShow" column="is_show"/>
+        <result property="createType" column="create_type"/>
+    </resultMap>
+
+    <select id="getAllArticle" resultMap="ArticleMap">
+		select * from article
+	</select>
+
+</mapper>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="wechat_shop.Dao.HeaderDao">
+
+    <!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="wechat_shop.Bean.HeaderCommodityBean" id="HeaderCommodityMap">
+        <result property="commodityId" column="header_commodity_id"/>
+        <result property="headerId" column="header_id"/>
+        <result property="commodityName" column="header_commodity_name"/>
+        <result property="commodityImgUrl" column="header_commodity_imgurl"/>
+        <result property="commodityDescription" column="header_commodity_description"/>
+        <result property="commodityDetails" column="header_commodity_details"/>
+        <result property="commoditySpecification" column="header_commodity_specification"/>
+        <result property="commodityTag" column="header_commodity_tag"/>
+        <result property="commodityNumber" column="header_commodity_number"/>
+        <result property="commodityPrice" column="header_commodity_price"/>
+    </resultMap>
+
+    <select id="selectHeadCommodity" resultMap="HeaderCommodityMap">
+        select * from header_commodity where header_id = #{headerId}
+    </select>
+
+</mapper>

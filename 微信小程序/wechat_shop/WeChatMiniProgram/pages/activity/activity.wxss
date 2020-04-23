@@ -1,0 +1,88 @@
+/**index.wxss**/
+page{
+  background: #fff;
+  height: 100%;
+  width: 100%;
+}
+.activity_view{
+  height: 100%;
+  width: 100%;
+  /* background: black; */
+}
+
+.acfi_view{
+  height:300px;
+  width: auto;
+  margin:30px 30px 30px 30px;
+  /* background: white; */
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+
+}
+
+.ac_view{
+  height:300px;
+  background: #fff;
+  border-radius: 20rpx;
+  overflow: hidden;
+}
+.ac_hover_view{
+  animation:click_narrow 0.2s;
+  animation-fill-mode: forwards;
+}
+@keyframes click_narrow
+{
+  to {height:400px;margin:15px 15px 15px 15px;border-radius: 20rpx;opacity: 1;}
+}
+
+.scroll_rich_view{
+  animation:scroll_rich_animation 2s;
+  animation-fill-mode: forwards;
+}
+@keyframes scroll_rich_animation
+{
+  from{background: #fff;opacity: 0;}
+  to {background: #fff;opacity: 1;}
+}
+@keyframes scroll_rich_animation_close
+{
+  from{background: #fff;opacity: 1;}
+  to {background: #fff;opacity: 0;}
+}
+@keyframes scroll_click_narrow
+{
+  to {position:fixed;top: 0px;left:0px;margin:0px;width: 100%; height:100%;background: #fff;opacity: 1;z-index: 1;}
+}
+@keyframes scroll_unclick_narrow
+{
+  to {position:fixed;top: 0px;left:0px;margin:0px;width: 100%; height:100%;background: #fff;opacity: 0;z-index: 1;}
+}
+
+.button_view{
+  position:fixed;
+  bottom: 0px;
+  width: 100%;
+}
+
+
+/* .userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+} */

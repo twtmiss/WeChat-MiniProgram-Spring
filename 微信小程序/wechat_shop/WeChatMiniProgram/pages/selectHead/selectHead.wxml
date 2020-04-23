@@ -1,0 +1,37 @@
+<view class="page-body">
+  <view class="page-section page-section-gap">
+    <map
+      id="myMap"
+      style="width: 100%; height: 300px;"
+      latitude="{{a}}"
+      longitude="{{b}}"
+      markers="{{markers}}"
+      covers="{{covers}}"
+      bindmarkertap="backup"
+      bindcallouttap="backup"
+      show-location
+    ></map>
+  </view>
+  <view class="btn-area">
+    <view class="head_view">
+    <view class="head_menu1">
+      <view class="head_menu1_im">
+        <image style="border-radius: 100rpx;" src="{{avatar}}http://192.168.10.108:8000/images/test/11/head.jpg"></image>
+      </view>
+      <view class="head_menu1_m">
+        <view class="head_menu1_m_nick">
+          <text>{{nickname}}欧陆</text>
+          <view class="head_menu1_m_nick_nameplateim">
+            团长
+          </view>
+        </view>
+        <text style="  margin-left: 10rpx; ">地址：东港区 - 二号社区 - 三号超市</text>
+        <text style="  margin-left: 10rpx; ">联系电话：13085584444</text>
+      </view>
+    </view>
+  </view>
+  </view>
+
+  <view><button bindtap="bakcuptap" data-headId="{{headId}}" data-nickname="{{nickname}}" data-address="{{address}}" data-phone="{{phone}}" data-avatar="{{avatar}}">确定</button></view>
+
+</view>

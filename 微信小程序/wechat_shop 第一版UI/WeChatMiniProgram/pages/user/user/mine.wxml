@@ -65,6 +65,6 @@
       </navigator>
     </view> -->
   </view>
-  <view class='company'>日照登高网络科技有限公司 © </view>
+  <view class='company'>https://github.com/twtmiss/WeChat-MiniProgram-Spring</view>
   <!--<view class="logout" bindtap="exitLogin">退出登录</view>-->
 </view>
