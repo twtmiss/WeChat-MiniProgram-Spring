@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "操作台",
+  "usingComponents": {
+    "i-cell-group": "/a_plugin/iview/cell-group/index",
+    "i-cell": "/a_plugin/iview/cell/index"
+  }
+}

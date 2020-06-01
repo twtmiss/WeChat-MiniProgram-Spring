@@ -1,0 +1,64 @@
+<!--pages/order/confirm/confirm.wxml-->
+
+
+<vtu-toast id="Vtu-Toast"></vtu-toast>
+<i-toast id="toast" />
+
+<view class="shopping_page">
+  <view class="page_top">
+    <!-- <view class="page_top_left"></view>占位用的 -->
+    <view class="page_top_center">订单</view>
+    <!-- <view class="page_top_right" bindtap="changeCartStatus">{{cartStatus==0?'编辑':'完成'}}</view> -->
+  </view>
+  <scroll-view scroll-y="true">
+    
+    <view class="product_view" wx:for="{{commodityList}}" wx:for-index="index" wx:for-item="item">
+      <view class="product_head">
+        <!-- <view class="{{item.isSelect?'product_select':'product_unselect'}}"><image></image></view> -->
+        <view class="product_unselect">
+        <image></image>
+        </view>
+        <view class="product_head_name">
+          <text>{{item.headName}}</text>
+        </view>
+      </view>
+      <view class="product_list">
+        <view style="width:30rpx;height:30rpx;"><image></image></view>
+        <view class="product_detail">
+          <view class="product_image">
+            <image src="{{item.specificationImgUrl}}" mode="widthFix"></image>
+          </view>
+          <view class="product_info">
+            <view class="product_name">{{item.commodityName}}</view>
+            <view class="product_spe">{{item.specificationName}} x {{item.number}}</view>
+            <view class="product_lable"></view>
+            <view class="product_price_number">
+              <view class="product_price">￥ {{item.specificationPrice}}</view>
+              <!-- <view class="product_number">
+                <view class="product_number_border" bindtap="editNumber" data-index="{{index}}" data-status="{{0}}">-</view>
+                <view class="product_number_border" style="width:80rpx;">X {{item.number}}</view>
+                <view class="product_number_border" bindtap="editNumber" data-index="{{index}}" data-status="{{1}}">+</view>
+              </view> -->
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+  </scroll-view>
+
+  <view class="settlement_view">
+    <view class="settlement_left">
+      <!-- <view style="display:flex;flex-direction: row;">
+        <view class="product_select"><image></image></view>
+        <view>全选</view>
+      </view> -->
+      <view class="settlement_price">合计：￥ {{totalPrice}}</view>
+    </view>
+    
+    <view class="settlement_button" bindtap="createOrder">
+      提交订单
+    </view>
+  </view>
+  
+</view>

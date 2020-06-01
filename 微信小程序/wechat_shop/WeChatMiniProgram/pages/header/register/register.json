@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "vtu-btn": "/a_plugin/vtuweapp/button/vtu-btn",
+    "i-card": "../../../a_plugin/iview/card/index",
+    "i-avatar": "../../a_plugin/iview/avatar/index",
+    "i-input": "../../a_plugin/iview/input/index",
+    "i-panel": "../../a_plugin/iview/panel/index",
+    "i-button": "../../a_plugin/iview/button/index",
+    "i-toast": "../../a_plugin/iview/toast/index"
+  }
+}

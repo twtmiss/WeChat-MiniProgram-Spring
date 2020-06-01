@@ -1,0 +1,36 @@
+<!--pages/activity/activityList/activityList.wxml-->
+
+<view class="page_view">
+  <scroll-view scroll-y="true">
+    <view class="activity_list" wx:for="{{activityList}}" wx:for-index="index" wx:for-item="item" >
+
+      <view class="activity_view" bindtap="bingActivity" data-articleId="{{item.articleId}}">
+        <view class="activity_image">
+          <image src="{{item.coverImgUrl}}" mode="aspectFit"></image>
+        </view>
+        <view class="activity_markdown">
+          <view class="markdown">
+            {{item.articleMarkdown}}
+          </view>
+        </view>
+      </view>
+
+      <view class="butn">
+        <view class="view_button" hover-class="view_hover" hover-start-time="20" hover-stay-time="100" bindtap="bindButton" data-articleId="{{item.articleId}}" data-btn="1">
+        删除
+        </view>
+        <view class="view_button" hover-class="view_hover" hover-start-time="20" hover-stay-time="100" bindtap="bindButton" data-articleId="{{item.articleId}}" data-btn="2">
+        {{item.isShow==1?"显示":"隐藏"}}
+        </view>
+        <view class="view_button" hover-class="view_hover" hover-start-time="20" hover-stay-time="100" bindtap="bindButton" data-articleId="{{item.articleId}}" data-btn="3">
+        编辑
+        </view>
+      </view>
+
+    </view>
+  </scroll-view>
+</view>
+
+<view class="create_button" bindtap="createActivity">
+  发布文章
+</view>

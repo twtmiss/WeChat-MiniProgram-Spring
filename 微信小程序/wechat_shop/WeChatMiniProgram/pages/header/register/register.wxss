@@ -1,0 +1,13 @@
+/* pages/header/register/register.wxss */
+.a{
+  border-width: 1px;
+  border-style: solid;
+  border-color: red;
+  opacity: 1;
+}
+.button_view{
+  position:fixed;
+  bottom: 30px;
+  width: 100%;
+  z-index: 1
+}

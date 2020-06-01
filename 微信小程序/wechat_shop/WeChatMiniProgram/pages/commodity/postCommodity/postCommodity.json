@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "vtu-swiper": "/a_plugin/vtuweapp/swiper/vtu-swiper",
+    "vtu-btn": "/a_plugin/vtuweapp/button/vtu-btn",
+    "vtu-cell": "/a_plugin/vtuweapp/cell/item/vtu-cell",
+    "vtu-imgPicker": "/a_plugin/vtuweapp/imgPicker/vtu-imgPicker",
+    "i-button": "/a_plugin/iview/button/index",
+    "i-panel": "/a_plugin/iview/panel/index",
+    "i-input": "/a_plugin/iview/input/index",
+    "i-icon": "/a_plugin/iview/icon/index"
+  }
+}

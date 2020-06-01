@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="wechat_shop.Dao.CartDao">
+
+    <!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="wechat_shop.Bean.CartBean" id="CartMap">
+        <result property="cartId" column="cart_id"/>
+        <result property="userId" column="user_id"/>
+        <result property="headId" column="header_id"/>
+        <result property="commodityId" column="commodity_id"/>
+        <result property="specificationId" column="commodity_specification_id"/>
+        <result property="commodityNumber" column="commodity_number"/>
+        <result property="isSelect" column="is_select"/>
+    </resultMap>
+
+    <select id="selectCartByUserId" resultMap="CartMap">
+		select * from user_cart where user_id=#{userId}
+	</select>
+
+    <insert id="insertCart" parameterType="wechat_shop.Bean.CartBean">
+        insert into user_cart (cart_id, user_id, header_id, commodity_id, commodity_specification_id, commodity_number,is_select)
+        values (#{cartId}, #{userId}, #{headId}, #{commodityId}, #{specificationId}, #{commodityNumber},0)
+    </insert>
+
+    <select id="selectSelectStatus" resultType="int">
+        select is_select from user_cart where
+            user_id=#{userId}
+            and cart_id=#{cartId}
+            and header_id=#{headId}
+            and commodity_id=#{commodityId}
+            and commodity_specification_id=#{specificationId}
+    </select>
+
+    <select id="selectCommodityCart" resultType="int">
+        select count(*) from user_cart where
+            user_id=#{userId}
+            and cart_id=#{cartId}
+            and header_id=#{headId}
+            and commodity_id=#{commodityId}
+            and commodity_specification_id=#{specificationId}
+    </select>
+
+    <select id="selectCommodityNumber" resultType="int">
+        select commodity_number from user_cart where
+            user_id=#{userId}
+            and cart_id=#{cartId}
+            and header_id=#{headId}
+            and commodity_id=#{commodityId}
+            and commodity_specification_id=#{specificationId}
+    </select>
+
+    <update id="updateCart" parameterType="wechat_shop.Bean.CartBean">
+        UPDATE
+            user_cart
+        set
+--         判断是否要更新商品选中状态，0为不更新。
+            is_select = if( #{selectStatus}=0, #{commoditySelectStatus}, if(#{commoditySelectStatus}=0,1,0) ),
+            commodity_number = #{number}
+        where
+            user_id=#{userId}
+            and cart_id=#{cartId}
+            and header_id=#{headId}
+            and commodity_id=#{commodityId}
+            and commodity_specification_id=#{specificationId}
+    </update>
+
+    <update id="updateCartCommodityNumber" parameterType="wechat_shop.Bean.CartBean">
+        UPDATE
+            user_cart
+        set
+            commodity_number = #{commodityNumber}
+        where
+            user_id=#{userId}
+            and cart_id=#{cartId}
+            and header_id=#{headId}
+            and commodity_id=#{commodityId}
+            and commodity_specification_id=#{specificationId}
+    </update>
+
+    <delete id="deleteCart">
+        delete from user_cart
+        where
+        <foreach item="item" collection="cartList" open="(" separator="," close=")">
+            cart_id=#{item.cartId}
+        </foreach>
+        and
+        <foreach item="item" collection="cartList" open="(" separator="," close=")">
+            user_id=#{item.userId}
+        </foreach>
+        and
+        <foreach item="item" collection="cartList" open="(" separator="," close=")">
+            header_id=#{item.headId}
+        </foreach>
+        and
+        <foreach item="item" collection="cartList" open="(" separator="," close=")">
+            commodity_id=#{item.commodityId}
+        </foreach>
+        and
+        <foreach item="item" collection="cartList" open="(" separator="," close=")">
+            commodity_specification_id=#{item.specificationId}
+        </foreach>
+    </delete>
+
+</mapper>

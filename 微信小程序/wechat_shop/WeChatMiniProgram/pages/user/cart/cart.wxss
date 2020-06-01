@@ -1,0 +1,187 @@
+
+
+page{
+  height: 100%;
+}
+.shopping_page{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  font-size: 26rpx;
+  overflow: hidden;
+}
+/* 商品列表 */
+scroll-view{
+  background: #f7f7f7;
+  height: 85%;
+}
+.page_top{
+  width: 100%;
+  height: 6%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.page_top_left{
+  height: 100%;
+  width: 65rpx;
+  margin-left: 30rpx;
+  /* background: red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.page_top_center{
+  height: 100%;
+  size: 30rpx;
+  /* background: red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.page_top_right{
+  height: 100%;
+  width: 65rpx;
+  /* background: red; */
+  margin-right: 30rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.product_view{
+  width: auto;
+  margin: 20rpx 30rpx;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20rpx;
+  overflow: hidden;
+}
+.product_head{
+  margin: 0rpx;
+  height: 60rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* background: yellow; */
+  
+}
+.product_unselect{
+  width: 30rpx;
+  height: 30rpx;
+  margin: 0rpx 20rpx;
+  border-radius: 50%;
+  border-style: solid;
+  border-width: 1rpx;
+  border-color: #D6D6D6;
+}
+.product_select{
+  width: 30rpx;
+  height: 30rpx;
+  margin: 0rpx 20rpx;
+  border-radius: 50%;
+  border-style: solid;
+  border-width: 1rpx;
+  border-color: #D6D6D6;
+  background: orange;
+}
+.product_head_name{
+  
+}
+.product_list{
+  margin: 0rpx;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* background: orange; */
+}
+.product_detail{
+  margin: 20rpx 20rpx 20rpx 0rpx;
+  display: flex;
+  flex-direction: row;
+}
+.product_image{
+  margin: 0rpx;
+  width: 120rpx;
+  height: 120rpx;
+  /* background: yellow; */
+}
+.product_image image{
+  width: 100%;
+}
+.product_info{
+  width: 460rpx;
+  margin: 0rpx 20rpx;
+  /* background: grey; */
+
+}
+.product_name{
+  
+}
+.product_spe{
+  color: #C9C9C9;
+}
+.product_lable{
+  
+}
+.product_price_number{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.product_price{
+  color: #FF6B0D;
+}
+.product_number{
+  display: flex;
+  flex-direction: row;
+  width: 160rpx;
+  height: 40rpx;
+}
+.product_number_border{
+  width: 40rpx;
+  border-style:solid;
+  border-width: 0.11rpx;
+  border-color: rgb(226, 226, 226);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 结算 */
+.settlement_view{
+  position: fixed;
+  bottom: 0rpx;
+  left: 0rpx;
+  height: 7%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.settlement_left{
+  width: 562.5rpx;
+  margin: 0rpx 0rpx 10rpx 30rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.settlement_price{
+  color: #FF6B0D;
+}
+.settlement_button{
+  margin: 0rpx 30rpx 10rpx 10rpx;
+  width: 187.5rpx;
+  height: 60rpx;
+  background: #FF6B0D;
+  border-radius: 30rpx;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

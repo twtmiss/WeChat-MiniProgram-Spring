@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "vtu-load-more": "/a_plugin/vtuweapp/loadMore/vtu-load-more",
+    "vtu-stepper": "/a_plugin/vtuweapp/stepper/vtu-stepper",
+    "vtu-swiper": "/a_plugin/vtuweapp/swiper/vtu-swiper",
+    "i-sticky": "/a_plugin/iview/sticky/index",
+    "i-sticky-item": "/a_plugin/iview/sticky-item/index",
+    "i-tabs": "/a_plugin/iview/tabs/index",
+    "i-tab": "/a_plugin/iview/tab/index",
+    "i-toast": "/a_plugin/iview/toast/index"
+  }
+}

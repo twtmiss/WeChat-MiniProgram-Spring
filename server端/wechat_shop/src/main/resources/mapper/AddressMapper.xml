@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="wechat_shop.Dao.AddressDao">
+
+    <!-- 可根据自己的需求，是否要使用 -->
+<!--    <resultMap type="wechat_shop.Bean.HeaderBean" id="HeaderMap">-->
+<!--        <result property="headerId" column="header_id"/>-->
+<!--        <result property="city" column="header_city"/>-->
+<!--        <result property="community" column="header_community"/>-->
+<!--        <result property="phoneNumber" column="header_phone_number"/>-->
+<!--        <result property="registeredTime" column="header_registered_time"/>-->
+<!--        <result property="longitude" column="header_longitude"/>-->
+<!--        <result property="latitude" column="header_latitude"/>-->
+<!--    </resultMap>-->
+
+<!--    <select id="selectAllHeader" resultMap="">-->
+<!--		select * from header-->
+<!--	</select>-->
+
+<!--    <select id="selectHeadCommodity" resultMap="">-->
+
+<!--    </select>-->
+
+</mapper>

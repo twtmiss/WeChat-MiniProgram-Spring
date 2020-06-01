@@ -1,9 +1,7 @@
 package wechat_shop.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import wechat_shop.Bean.ArticleBean;
 import wechat_shop.Service.ArticleService;
 import wechat_shop.Util.Result;
@@ -31,5 +29,48 @@ public class ArticleController {
             }
         }
         return Result.resultSuccess("OK",articleResponseList);
+    }
+
+    // 获取团长发布的文章列表
+    @GetMapping("/head")
+    public Object GetActivityListByHeadId(Integer headId){
+        List<ArticleBean> articleList = articleService.GetArticleListByHeadId(headId);
+        return Result.resultSuccess("OK",articleList);
+    }
+
+    // 获取文章内容
+    @GetMapping("/article")
+    public Object GetActivityByArticleId(Integer articleId){
+        ArticleBean article = articleService.GetArticleByArticleId(articleId);
+
+        return Result.resultSuccess("OK",article);
+    }
+
+    // 创建文章
+    @PostMapping("/create")
+    public Object CreateArticle(Integer headId,Integer articleId, String articleMarkdown,String coverImgUrl){
+        Integer result = articleService.CreateArticle(headId,articleMarkdown,coverImgUrl);
+        return Result.resultSuccess("OK",result);
+    }
+
+    // 更新文章状态
+    @PostMapping("/updateStatus")
+    public Object UpdateArticleStatusByArticleId(Integer articleId){
+        Integer result = articleService.UpdateArticleStatusByArticleId(articleId);
+        return Result.resultSuccess("OK",result);
+    }
+
+    // 更新文章
+    @PostMapping("/update")
+    public Object UpdateArticleByArticleId(Integer articleId, String articleMarkdown,String coverImgUrl){
+        Integer result = articleService.UpdateArticleByArticleId(articleId,articleMarkdown,coverImgUrl);
+        return Result.resultSuccess("OK",result);
+    }
+
+    // 删除文章
+    @DeleteMapping("/delete")
+    public Object DeleteArticleByArticleId(Integer articleId){
+        Integer result = articleService.DeleteArticleByArticleId(articleId);
+        return Result.resultSuccess("OK",result);
     }
 }

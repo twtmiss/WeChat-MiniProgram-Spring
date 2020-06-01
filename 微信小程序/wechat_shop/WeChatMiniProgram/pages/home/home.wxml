@@ -2,7 +2,7 @@
 <!--index.wxml-->
 
 
-<vtu-swiper list="{{imageList}}" height="{{(windowWidth-40)/2}}px" dot-type="round" indicator-active-color="#3fe816" swiper-class="swiperClass" indicator-dots="{{true}}" current="{{current}}" bind:change="bindChange"></vtu-swiper>
+<vtu-swiper list="{{imageList}}" height="{{(windowWidth-40)/2}}px" dot-type="round" indicator-active-color="#3fe816" swiper-class="swiperClass" indicator-dots="true" bind:change="bindChange"></vtu-swiper>
 
 <!-- <vtu-swiper type="card" height="{{(windowWidth-40)/2}}px" list="{{imageList}}" swiper-class="swiperClass" indicator-dots="{{true}}" current="{{current}}" bind:change="bindChange"></vtu-swiper> -->
 
@@ -38,111 +38,40 @@
   <view class="head_view">
 
     <view class="head_avatar">
-      <image src="http://pic.misslovecloud.cn/picgo20200211113600.jpg"/>
+      <image src="{{avatar}}"/>
     </view>
 
     <view class="head_info">
       <view class="head_info_top">
         <view class="head_info_nick">
-         <view class="head_info_nick_nameplateim">团长</view><text>李芳芳</text>
+         <view class="head_info_nick_nameplateim">团长</view><text>{{nickname}}</text>
         </view>
         <view class="switch_head" bindtap="switch_head">
           <text>切换团长</text>
          </view>
       </view>
-      <text style="margin-left: 10rpx; ">地址：东港区 - 一号社区 - 一号超市</text>
-      <text style="margin-left: 10rpx; ">联系电话：18011223344</text>
+      <text style="margin-left: 10rpx; ">地址：{{city}} - {{address}}</text>
+      <text style="margin-left: 10rpx; ">联系电话：{{phone}}</text>
     </view>
   </view>
 
 <!-- 商品列表 -->
 <view>
-  <!-- <i-sticky scrollTop="{{scrollTop}}">
-    <i-sticky-item i-class="i-sticky-demo-title">
-      <view slot="title">
-        <i-tabs current="{{ current }}" color="#f759ab" bindchange="handleChange">
-          <i-tab key="tab1" title="在售商品"></i-tab>
-          <i-tab key="tab2" title="拼团"></i-tab>
-        </i-tabs>
-      </view>
-      <view slot="content"> -->
         <view class="content">
-          
-          <view class="product" bindtap="bind_product">
+        
+          <view class="product" wx:for="{{commodityList}}" wx:key="item.id" bindtap="bind_product" data-commodityId="{{item.commodityId}}">
             <!-- 展示图 -->
             <view class="product_image">
-              <image src="http://pic.misslovecloud.cn//picgo/pms_1528169343.02481518.jpg"/>
+              <image src="{{item.commodityImgUrl}}"/>
             </view>
             <view class="product_info">
               <!-- 名称 -->
-              <view class="product_name">阿瓦提长绒棉，不掉毛告别毛絮烦恼</view>
+              <view class="product_name">{{item.commodityName}}</view>
               <!-- 价格 -->
-              <view class="product_price">￥ 19.9
-                <!-- <text class="product_lable">新品</text>
-                <text class="product_lable">满减</text>
-                <text class="product_lable">促销</text> -->
-              </view>
-              <!-- 原价 -->
-              <view class="product_original_price" wx:if="{{true}}">￥ 29</view>
-              <!-- 文字标签 -->
-              <view class="product_description" wx:if="{{true}}"><text>您的浏览足迹</text></view>
-            </view>
-          </view>
-
-          <view class="product">
-            <!-- 展示图 -->
-            <view class="product_image">
-              <image src="http://pic.misslovecloud.cn//picgo/pms_1528169343.02481518.jpg"/>
-            </view>
-            <view class="product_info">
-              <!-- 名称 -->
-              <view class="product_name">阿瓦提长绒棉，不掉毛告别毛絮烦恼</view>
-              <!-- 价格 -->
-              <view class="product_price">￥ 19.9
-                <text class="product_lable">新品</text>
-                <text class="product_lable">满减</text>
-                <text class="product_lable">促销</text>
-              </view>
-              <!-- 原价 -->
-              <view class="product_original_price" wx:if="{{true}}">￥ 29</view>
-              <!-- 文字标签 -->
-              <view class="product_description" wx:if="{{true}}"><text>您的浏览足迹</text></view>
-            </view>
-          </view>
-          
-          <view class="product">
-            <!-- 展示图 -->
-            <view class="product_image">
-              <image src="http://pic.misslovecloud.cn//picgo/pms_1528169343.02481518.jpg" mode="widthFix"/>
-            </view>
-            <view class="product_info">
-              <!-- 名称 -->
-              <view class="product_name">阿瓦提长绒棉，不掉毛告别毛絮烦恼</view>
-              <!-- 价格 -->
-              <view class="product_price">￥ 19.9
-                <text class="product_lable">新品</text>
-                <!-- <text class="product_lable">满减</text>
-                <text class="product_lable">促销</text> -->
-              </view>
-              <!-- 原价 -->
-              <view class="product_original_price" wx:if="{{true}}">￥ 29</view>
-              <!-- 文字标签 -->
-              <view class="product_description" wx:if="{{true}}"><text>您的浏览足迹</text></view>
+              <view class="product_price">￥ {{item.commodityPrice}}</view>
             </view>
           </view>
 
         </view>
-      <!-- </view>
-    </i-sticky-item>
-  </i-sticky> -->
   
 </view>
-
-
-<!-- 分隔符 -->
-<!-- <i-divider content="· · · · · ·"/> -->
-
-<!-- <view class='company'>到底了 </view > -->
-
-
-

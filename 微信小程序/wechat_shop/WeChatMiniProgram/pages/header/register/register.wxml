@@ -1,0 +1,22 @@
+<!--pages/header/register/register.wxml-->
+<i-card title="{{nickName}}" thumb="{{avatarUrl}}">
+    <view slot="content">{{country}}-{{province}}-{{city}}</view>
+</i-card>
+
+<i-panel title="填写一些信息帮助我们更好的提供服务吧">
+  <view style="  border-width: 1px;border-style: solid; border-color: RGB(255,0,0,{{opacityValue}});">
+    <i-input bind:change="bindPhoneNumber" type="textarea" maxlength="11" title="手机号" placeholder="(必填)" />
+    <i-input bind:change="bindCommunity" type="textarea" title="注册社区" placeholder="(必填)"maxlength="20" />
+
+  </view>
+  <!-- <i-input bind:change="bindCity" type="textarea" title="注册城市" placeholder="(必填)"maxlength="50" /> -->
+  <!-- <i-input value="{{ value3 }}" type="number" title="QQ号" placeholder="觉得太过繁琐可以不用填哦(选填)"maxlength="50" /> -->
+</i-panel>
+
+<!-- <i-button bind:click="handleSuccess" type="info" shape="circle">提交</i-button> -->
+<view class="button_view">
+<vtu-btn bind:click="handleSuccess"  type="primary" round="true">主要按钮</vtu-btn>
+</view>
+
+
+<i-toast id="toast" />

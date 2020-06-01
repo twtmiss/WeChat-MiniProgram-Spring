@@ -1,0 +1,17 @@
+<!--pages/activity/activity/activity.wxml-->
+
+<view style="height:66%;width:100%;justify-content: center;display: flex;">
+  <image src="{{coverImgUrl}}" style="height:100%;width:100%;" mode="aspectFit" />
+</view>
+
+<view class="container">
+	<wemark md="{{articleMarkdown}}" link highlight type="wemark"></wemark>
+</view>
+
+<view wx:if="{{isEdit==1||isEdit==2}}">
+  <i-button bind:click="handleOpen" type="info" shape="circle" class="button_view">提交</i-button>
+  <i-toast id="toast" />
+</view>
+
+
+

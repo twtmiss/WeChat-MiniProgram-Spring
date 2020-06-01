@@ -3,7 +3,7 @@
   <button class="userinfo" style="width: 100%;" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">
 		<!-- <image wx:if="{{userInfo && userInfo.avatarUrl}}" class="userinfo-avatar" src="{{ userInfo.avatarUrl }}" background-size="cover"></image> -->
     
-    <image wx:if="{{userInfo && userInfo.avatarUrl}}" class="userinfo-avatar" src="http://pic.misslovecloud.cn/picgo20200211113600.jpg" background-size="cover"></image>
+    <image wx:if="{{userInfo && userInfo.avatarUrl}}" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
 		<text class="userinfo-nickname">{{ userInfo.nickName }}</text>
 	</button>
   <view style="height:20rpx;background: #eee;width:100%;"></view>
@@ -11,7 +11,7 @@
   
   <view class="user-menu">
     <view class="item">
-      <navigator url="/pages/user/order/order" class="a">
+      <navigator url="/pages/order/listOrder/listOrder" class="a">
         <text class="icon order"></text>
         <text class="txt">我的订单</text>
       </navigator>
@@ -22,24 +22,24 @@
         <text class="txt">优惠券</text>
       </navigator>
     </view> -->
-    <view class="item">
+    <!-- <view class="item">
       <navigator url="/pages/ucenter/collect/collect" class="a">
         <text class="icon address"></text>
         <text class="txt">我的收藏</text>
       </navigator>
-    </view>
+    </view> -->
     <!-- <view class="item">
       <navigator url="/pages/ucenter/footprint/footprint" class="a">
         <text class="icon security"></text>
         <text class="txt">我的足迹</text>
       </navigator>
     </view> -->
-    <view class="item">
+    <!-- <view class="item">
       <navigator url="../address/address" class="a">
         <text class="icon address"></text>
         <text class="txt">地址管理</text>
       </navigator>
-    </view>
+    </view> -->
     <button class='service' open-type="contact">
       <view class="item no-border">
         <navigator url="url" class="a">
@@ -48,24 +48,26 @@
         </navigator>
       </view>
     </button>
-    <view class="item item-bottom">
+    <!-- <view class="item item-bottom">
       <navigator url="/pages/ucenter/help/help" class="a">
         <text class="icon help"></text>
         <text class="txt">帮助中心</text>
       </navigator>
-    </view>
-    <view class="item item-bottom">
+    </view> -->
+    <!-- <view class="item item-bottom">
       <navigator url="/pages/ucenter/feedback/feedback" class="a">
         <text class="icon feedback"></text>
         <text class="txt">意见反馈</text>
       </navigator>
-    </view>
-    <!-- <view class="item item-bottom" v-if="hasMobile != ''">
-      <navigator url="/pages/headcenter/head/head" class="a">
-        <text class="icon phone"></text>
-        <text class="txt">{{ishead==1?"我是团长":"注册团长"}}</text>
-      </navigator>
     </view> -->
+    <view class="item item-bottom" v-if="hasMobile != ''" bindtap="bind_head">
+      <view class="a">
+      <!-- <navigator url="/pages/header/register/register" class="a"> -->
+        <text class="icon phone"></text>
+        <text class="txt">{{ishead?"操作台":"注册团长"}}</text>
+      <!-- </navigator> -->
+      </view>
+    </view>
   </view>
   <!-- <view class='company'>by twtmiss</view> -->
   <!--<view class="logout" bindtap="exitLogin">退出登录</view>-->

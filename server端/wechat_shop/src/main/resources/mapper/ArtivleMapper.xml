@@ -6,6 +6,7 @@
     <!-- 可根据自己的需求，是否要使用 -->
     <resultMap type="wechat_shop.Bean.ArticleBean" id="ArticleMap">
         <result property="articleId" column="article_id"/>
+        <result property="headId" column="head_id"/>
         <result property="coverImgUrl" column="cover_img_url"/>
         <result property="articleMarkdown" column="article_markdown"/>
         <result property="isShow" column="is_show"/>
@@ -15,5 +16,40 @@
     <select id="getAllArticle" resultMap="ArticleMap">
 		select * from article
 	</select>
+
+    <select id="selectArticleListByHeadId" resultMap="ArticleMap">
+        select * from article where head_id=#{headId}
+    </select>
+
+    <select id="selectArticleByArticleId" resultMap="ArticleMap">
+        select * from article where article_id=#{articleId}
+    </select>
+
+    <insert id="insertArticle">
+        insert into article (
+        head_id,cover_img_url,article_markdown,is_show,create_type
+        )
+        values (
+        #{headId},#{coverImgUrl},#{articleMarkdown},0,"文章"
+        )
+    </insert>
+
+    <update id="updateArticleStatusByArticleId" parameterType="wechat_shop.Bean.ArticleBean">
+        update article set is_show=#{isShow} where article_id=#{articleId}
+    </update>
+
+    <update id="updateArticleByArticleId" parameterType="wechat_shop.Bean.ArticleBean">
+        update
+            article
+        set
+            cover_img_url = #{coverImgUrl},
+            article_markdown = #{articleMarkdown}
+        where
+            article_id=#{articleId}
+    </update>
+
+    <delete id="deleteArticleByArticleId">
+        delete from article where article_id=#{articleId}
+    </delete>
 
 </mapper>

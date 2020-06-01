@@ -1,0 +1,111 @@
+/* pages/commodity/listCommodity/listCommodity.wxss */
+
+page{
+  height: 100%;
+  width: 100%;
+  background: #f7f7f7;
+}
+.page_view{
+  width: 100%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  font-size: 26rpx;
+  overflow: hidden;
+  /* padding-bottom: 3%;  */
+}
+/* 商品列表 */
+scroll-view{
+  height: 100%;
+}
+
+.activity_list{
+  width: 94%;
+  height: 370rpx;
+  margin: 3% 3% 0% 3%;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20rpx;
+  overflow: hidden;
+}
+
+.activity_view{
+  margin: 3%;
+  height: 70%;
+  width: 94%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* background: orange; */
+}
+.activity_image{
+  margin: 0rpx;
+  width: 40%;
+  height: 100%;
+  /* background: aqua; */
+  display: flex; 
+  flex-direction: column;
+  justify-content: center;
+}
+.activity_image image{
+  width: 100%;
+}
+
+.activity_markdown{
+  width: 60%;
+  height: 100%;
+  /* background: grey; */
+  display: flex;
+  flex-direction: column;
+  
+}
+.markdown{
+  height: 66%;
+  margin: 5%;
+  overflow: hidden;
+}
+
+.butn{
+  width: 94%;
+  height: 14%;
+  /* min-height: 30rpx; */
+  margin: 0% 3% 3% 3%;
+  display: flex;
+  flex-flow: row-reverse;
+  align-content: center;
+  /* background: greenyellow; */
+}
+.view_button{
+  margin-left: 20rpx;
+  width:110rpx;
+  height: 45rpx;
+  border-radius: 20rpx;
+  border-width: 1px; 
+  border-color: #5CADFF;
+  border-style: solid;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 20rpx;
+  color: #5CADFF;
+}
+/* view按钮的点击效果 */
+.view_hover{
+  opacity: 0.8;
+  background-color: #EBEEF5;
+}
+
+.create_button{
+  height: 6%;
+  margin: 3% 3% 3% 3%;
+  width: 94%;
+  background: #91c7ff;
+  border-radius: 20rpx;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}

@@ -6,24 +6,12 @@ const api = require('../../utils/config.js');
 Page({
   // "enablePullDownRefresh": true,
   data: {
-
-    // currentTab: 0,
-    // spot: [],
-    // head: [],
-    // headId: '',
-    // userId: '',
-    // nickname: '',
-    // address: '',
-    // phone: '',
-    // avatar: '',
-    // presale: [],
-    // newGoods: [],
-    // hotGoods: [],
-    // topics: [],
-    // brands: [],
-    // floorGoods: [],
-    // banner: [],
-    // channel: [],
+    commodityList:[],
+    nickname: '',
+    city:'',
+    address: '',
+    phone: '',
+    avatar: '',
     current: 'tab1',
     scrollTop: 0,
     current: 1,
@@ -49,35 +37,91 @@ Page({
         mode: "widthFix"
       }
     ],
-    imageList2: [
-      {
-        url: 'https://activity.vtuzx.com/doc/vtuUI/weapp/swiper/2.png',
-        content: '红米7大电量18个月质保智能学生老年人全网通手机小米官方旗舰店redmi7A官网正品xiaomi红米note7',
-        mode: "widthFix"
-      },
-      {
-        url: 'https://activity.vtuzx.com/doc/vtuUI/weapp/swiper/4.png',
-        content: 'OPPO K3 oppok3手机全新机新款上市oppok3限量超薄oppoa5手机 a7x r17oppor15x 0ppok3r90pp0k1',
-        mode: "widthFix"
-      },
-      {
-        url: 'https://activity.vtuzx.com/doc/vtuUI/weapp/swiper/1.png',
-        content: '12期分期可减540当天发Huawei/华为 P30手机官方旗舰店正品p30荣耀p30pro直降mate20x新款5g全网通p10 p20pro',
-        mode: "widthFix"
-      },
-      {
-        url: 'https://activity.vtuzx.com/doc/vtuUI/weapp/swiper/3.png',
-        content: '【选送小米27W快充头】Xiaomi/小米 Redmi K20Pro骁龙855红米K20手机官方旗舰弹出全面屏4800万广角三摄note7',
-        mode: "widthFix"
-      },
-      {
-        url: 'https://activity.vtuzx.com/doc/vtuUI/weapp/swiper/5.png',
-        content: '可12期免息【抢360券+送无线充】xiaomi/小米9手机plus官方旗舰店骁龙855透明尊享版九Mix4红米K20小米9学生',
-        mode: "widthFix"
-      }
-    ],
     windowWidth: wx.getSystemInfoSync().windowWidth
   },
+
+  // 页面加载
+  onLoad: function (options) {
+    // this.getHeadInfoByUserId();
+    // this.getHeadCommodityByHeadId();
+  },
+  onShow:function(){
+    this.getHeadInfoByUserId();
+    this.getHeadCommodityByHeadId();
+  },
+
+  // 根据用户id获取选择的团长信息
+  getHeadInfoByUserId: function(){
+    var that = this
+    util.request(api.GetHeadInfoByUserId, {
+      userId: wx.getStorageSync('userId')
+    },"GET").then(function (res) {
+      if (res.status === 1) {
+        that.setData({ 
+          nickname: res.data.headerNickName,
+          city: res.data.headCity,
+          address: res.data.headcommunity,
+          phone: res.data.headerPhoneNumber,
+          avatar: res.data.headerAvatarUrl,
+        })
+        wx.setStorageSync('selectHeadId', res.data.headerId)
+        wx.setStorageSync('headerNickName', res.data.headerNickName)
+        wx.setStorageSync('headerPhoneNumber', res.data.headerPhoneNumber)
+        wx.setStorageSync('headerAvatarUrl', res.data.headerAvatarUrl)
+      }
+    });
+  },
+
+  // 根据团长Id获取团长发布的商品
+  getHeadCommodityByHeadId:function(){
+    var that = this
+    util.request(api.GetHeadCommodityByHeadId, {
+      headId: wx.getStorageSync('selectHeadId')
+    }, "GET").then(function (res) {
+      if (res.status === 1) {
+        that.setData({ commodityList: res.data })
+      }
+    });
+  },
+
+  // 跳转到商品详情页面
+  bind_product: function (event) {
+    // console.log(event.currentTarget.dataset.commodityid)
+    wx.navigateTo({
+      url: '/pages/commodity/viewCommodity/viewCommodity?commodityId=' 
+            + event.currentTarget.dataset.commodityid,
+    })
+  },
+
+  // 选择团长
+  switch_head: function () {
+    if (wx.getStorageSync("userInfo")) {
+      wx.navigateTo({
+        url: '/pages/user/selectHead/selectHead',
+      })
+    } else {
+      wx.showToast({
+        title: '未登录,请点击右下角"我的"登录',
+        icon: 'none',
+        duration: 2000
+      })
+    }
+  },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   // 商品列表
   //吸顶容器
@@ -85,28 +129,20 @@ Page({
   //   console.log(event.detail, 'click right menu callback data')
   // },
   //吸顶容器 页面滚动执行方式
-  onPageScroll(event) {
-    this.setData({
-      scrollTop: event.scrollTop
-    })
-  },
+  // onPageScroll(event) {
+  //   this.setData({
+  //     scrollTop: event.scrollTop
+  //   })
+  // },
 
-  // 吸顶 标签页
-  handleChange({ detail }) {
-    this.setData({
-      current: detail.key
-    });
-  },
-  bind_product:function(){
-    wx.navigateTo({
-      url: '/pages/productDetail/productDetail',
-    })
-  },
-  switch_head: function () {
-    wx.navigateTo({
-      url: '/pages/selectHead/selectHead',
-    })
-  },
+  // // 吸顶 标签页
+  // handleChange({ detail }) {
+  //   this.setData({
+  //     current: detail.key
+  //   });
+  // },
+
+ 
 
   // onShareAppMessage: function () {
   //   return {

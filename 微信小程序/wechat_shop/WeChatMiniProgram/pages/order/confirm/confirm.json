@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "vtu-swiper": "/a_plugin/vtuweapp/swiper/vtu-swiper",
+    "vtu-btn": "/a_plugin/vtuweapp/button/vtu-btn",
+    "i-button": "/a_plugin/iview/button/index",
+    "i-icon": "/a_plugin/iview/icon/index",
+    "vtu-load-more": "/a_plugin/vtuweapp/loadMore/vtu-load-more",
+    "i-toast": "/a_plugin/iview/toast/index"
+  }
+}

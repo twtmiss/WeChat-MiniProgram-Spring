@@ -5,12 +5,21 @@ import java.util.Date;
 // 团长
 public class HeaderBean {
     private Integer headerId;       // 团长id
+    private Integer userId;         // 用户id
     private String city;            // 城市
     private String community;       // 社区
     private String phoneNumber;     // 手机号
     private Long registeredTime;    // 注册时间
     private String longitude;       // 经度
     private String latitude;        // 纬度
+
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
 
     public Integer getHeaderId() {
         return headerId;

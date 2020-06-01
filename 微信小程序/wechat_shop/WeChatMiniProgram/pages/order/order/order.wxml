@@ -1,0 +1,78 @@
+<!--pages/order/order/order.wxml-->
+
+<view class="shopping_page">
+
+  <scroll-view scroll-y="true">
+    
+    <view class="product_view">
+      <view class="product_head">
+        <view class="product_head_name">
+          <text>{{order.headName}}</text>
+        </view>
+        <view style="color:#f5bf49">
+          <!-- {{order.orderStatus==2?"已完成":(order.orderStatus==1?"未完成":"未支付")}} -->
+        </view>
+      </view>
+
+      <view class="product_list">
+
+          <view class="product_image">
+            <image src="{{order.specificationImgUrl}}" mode="widthFix"></image>
+          </view>
+
+          <view class="product_info">
+            <view class="product_cloum">{{order.commodityName}}</view>
+            <view class="product_cloum product_spe">
+              {{order.specificationName}} x {{order.commodityNumber}}
+            </view>
+            <view class="product_cloum">
+              <view class="product_price">单价：￥ {{order.commodityPrice}}</view>
+            </view>
+          </view>
+
+      </view>
+
+    </view>
+
+    <view class="product_view">
+      <view class="order_price">
+          订单总价格：{{order.totalPrice}}
+        </view>
+        <view class="order_price">
+          优惠价格：{{order.discountedPrices}}
+        </view>
+        <view class="order_price" style="flex-flow: row-reverse;color: #FF6B0D;">
+          支付价格：{{order.payPrice}}
+        </view>
+        <view class="order_price">
+          <!-- 订单完成时间：{{order.createTime}} -->
+        </view>
+
+    </view>
+
+    <view class="product_view">
+      <view class="order_info_cloum">
+          微信交易号：{{order.weChatTransactionNumber}}
+        </view>
+        <view class="order_info_cloum">
+          订单创建时间：{{order.createTime}}
+        </view>
+        <view class="order_info_cloum" wx:if="{{order.orderStatus!=0}}">
+          订单支付时间：{{order.createTime}}
+        </view>
+        <view class="order_info_cloum" wx:if="{{order.orderStatus==2}}">
+          订单完成时间：{{order.createTime}}
+        </view>
+
+        <view class="butn">
+          <view style="margin:0% 0% 0% 3%">
+            <view class="view_button" hover-class="{{order.orderStatus==2?'':'view_hover'}}" hover-start-time="20" hover-stay-time="100" bindtap="updateOrderStatus" data-orderid="{{order.orderId}}">
+            {{order.orderStatus==2?"已完成":order.orderStatus==1?"确认完成":"付款"}}
+            </view>
+          </view>
+        </view>
+
+    </view>
+  </scroll-view>
+
+</view>

@@ -1,0 +1,48 @@
+<!--pages/order/confirm/confirm.wxml-->
+
+<view class="shopping_page">
+
+  <scroll-view scroll-y="true">
+    
+    <view class="product_view" wx:for="{{orderList}}" wx:for-index="index" wx:for-item="item" >
+      <view class="product_head" bindtap="orderInfo" data-orderid="{{item.orderId}}">
+        <view class="product_head_name">
+          <text>{{isHead==0?item.headName:item.userName}}</text>
+        </view>
+        <view style="color:#f5bf49">
+          <!-- {{item.orderStatus==2?"已完成":(item.orderStatus==1?"未完成":"未支付")}} -->
+          {{item.orderStatus==2?item.transactionTime:item.orderStatus==1?item.paymentTime:item.createTime}}
+        </view>
+      </view>
+
+      <view class="product_list">
+          <view class="product_image"bindtap="orderInfo" data-orderid="{{item.orderId}}">
+            <image src="{{item.specificationImgUrl}}" mode="widthFix"></image>
+          </view>
+          <view class="product_info">
+            <view class="product_cloum" bindtap="orderInfo" data-orderid="{{item.orderId}}">{{item.commodityName}}</view>
+            <view class="product_cloum product_spe" bindtap="orderInfo" data-orderid="{{item.orderId}}">
+              {{item.specificationName}} x {{item.commodityNumber}}
+            </view>
+            <view class="product_cloum" bindtap="orderInfo" data-orderid="{{item.orderId}}">
+              <view class="product_price">￥ {{item.commodityPrice}}</view>
+            </view>
+            <!-- <view class="product_cloum" bindtap="orderInfo" data-orderid="{{item.orderId}}">
+              {{item.orderStatus==2?item.transactionTime:item.orderStatus==1?item.paymentTime:item.createTime}}
+            </view> -->
+
+            <view class="butn">
+              <view style="margin:0% 0% 0% 3%">
+                <view class="view_button" hover-class="{{item.orderStatus==2?'':'view_hover'}}" hover-start-time="20" hover-stay-time="100" bindtap="updateOrderStatus" data-orderid="{{item.orderId}}">
+                {{item.orderStatus==2?"已完成":item.orderStatus==1?"确认完成":"付款"}}
+                </view>
+              </view>
+            </view>
+
+          </view>
+      </view>
+
+    </view>
+  </scroll-view>
+
+</view>

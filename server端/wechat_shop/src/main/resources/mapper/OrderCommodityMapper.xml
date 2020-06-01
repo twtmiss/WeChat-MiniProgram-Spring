@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="wechat_shop.Dao.OrderCommodityDao">
+
+<!--     可根据自己的需求，是否要使用-->
+    <resultMap type="wechat_shop.Bean.OrderCommodityBean" id="OrderCommodityMap">
+        <result property="orderId" column="order_id"/>
+        <result property="headerId" column="header_id"/>
+        <result property="commodityId" column="commodity_id"/>
+        <result property="specificationId" column="specification_id"/>
+        <result property="name" column="name"/>
+        <result property="imgUrl" column="imgurl"/>
+        <result property="description" column="description"/>
+        <result property="details" column="details"/>
+        <result property="specificationName" column="specification_name"/>
+        <result property="commodityNumber" column="commodity_number"/>
+        <result property="commodityPrice" column="commodity_price"/>
+    </resultMap>
+
+    <select id="getOrderCommodityListByOrderId" resultMap="OrderCommodityMap">
+        select * from user_order_commodity where order_id=#{orderId}
+    </select>
+
+    <select id="getOrderCommodityListByHeadId" resultMap="OrderCommodityMap">
+        select * from user_order_commodity where header_id=#{headId}
+    </select>
+
+
+
+    <insert id="insertOrderComodity" parameterType="wechat_shop.Bean.OrderCommodityBean">
+        insert into user_order_commodity
+        (order_id, header_id, commodity_id, specification_id, name, imgurl,description,details,specification_name,commodity_number,commodity_price)
+        values
+        (#{orderId}, #{headerId}, #{commodityId}, #{specificationId}, #{name}, #{imgUrl}, #{description}, #{details}, #{specificationName}, #{commodityNumber}, #{commodityPrice})
+    </insert>
+
+</mapper>

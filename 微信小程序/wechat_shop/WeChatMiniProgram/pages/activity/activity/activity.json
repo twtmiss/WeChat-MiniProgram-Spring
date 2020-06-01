@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "文章",
+  "usingComponents": {
+    "wemark": "/a_plugin/markdown/wemark",
+    "i-toast": "/a_plugin/iview/toast/index",
+    "i-button": "/a_plugin/iview/button/index"
+  }
+}

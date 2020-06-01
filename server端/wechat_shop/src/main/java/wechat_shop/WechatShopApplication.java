@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class WechatShopApplication {
 
     public static void main(String[] args) {
+
         SpringApplication.run(WechatShopApplication.class, args);
     }
 

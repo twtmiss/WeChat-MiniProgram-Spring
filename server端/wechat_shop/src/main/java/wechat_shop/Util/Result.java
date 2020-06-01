@@ -61,12 +61,20 @@ public class Result<T> implements Serializable {
         return new Result<T>(ResponseCode.SUCCESS.getCode());
     }
 
+    public static <T> Result<T> resultSuccessMessage(Integer code, String msg){
+        return new Result<T>(code, msg);
+    }
+
     public static <T> Result<T> resultSuccessMessage(String msg){
         return new Result<T>(ResponseCode.SUCCESS.getCode(),msg);
     }
 
     public static <T> Result<T> resultSuccess(T data){
         return new Result<T>(ResponseCode.SUCCESS.getCode(), data);
+    }
+
+    public static <T> Result<T> resultSuccess(Integer code, String msg, T data){
+        return new Result<T>(code, msg, data);
     }
 
     public static <T> Result<T> resultSuccess(String msg, T data){

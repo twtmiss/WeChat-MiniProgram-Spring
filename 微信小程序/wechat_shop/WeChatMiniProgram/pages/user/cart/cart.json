@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "vtu-load-more": "/a_plugin/vtuweapp/loadMore/vtu-load-more",
+    "i-toast": "/a_plugin/iview/toast/index"
+  }
+}

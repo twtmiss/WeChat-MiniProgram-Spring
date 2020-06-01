@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="wechat_shop.Dao.OrderDao">
+
+    <!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="wechat_shop.Bean.OrderBean" id="OrderMap">
+        <result property="orderId" column="order_id"/>
+        <result property="userId" column="user_id"/>
+        <result property="meansOfTransaction" column="means_of_transaction"/>
+        <result property="totalPrice" column="total_price"/>
+        <result property="payPrice" column="pay_price"/>
+        <result property="discountedPrices" column="discounted_prices"/>
+        <result property="weChatTransactionNumber" column="wechat_transaction_number"/>
+        <result property="createTime" column="create_time"/>
+        <result property="paymentTime" column="payment_time"/>
+        <result property="transactionTime" column="transaction_time"/>
+    </resultMap>
+
+    <select id="getOrderListByUserId" resultMap="OrderMap">
+        select * from user_order where user_id=#{userId}
+    </select>
+
+    <select id="getOrderByOrderId" resultMap="OrderMap">
+        select * from user_order where order_id=#{orderId}
+    </select>
+
+    <select id="selectOrderByOrderId" resultMap="OrderMap">
+        select * from user_order where order_id=#{orderId}
+    </select>
+
+    <insert id="insertOrder" parameterType="wechat_shop.Bean.OrderBean" useGeneratedKeys="true" keyProperty="orderId" >
+        insert into user_order
+        (user_id, means_of_transaction, total_price, pay_price, discounted_prices,
+        wechat_transaction_number, create_time, payment_time, transaction_time)
+        values
+        (#{userId}, #{meansOfTransaction}, #{totalPrice}, #{payPrice}, #{discountedPrices},
+         #{weChatTransactionNumber}, #{createTime}, #{paymentTime}, #{transactionTime})
+    </insert>
+    
+    <update id="updateOrderPaymentTime">
+        update user_order set payment_time =#{time} where order_id=#{orderId}
+    </update>
+
+    <update id="updateOrderTransactionTime">
+        update user_order set transaction_time =#{time} where order_id=#{orderId}
+    </update>
+
+
+</mapper>

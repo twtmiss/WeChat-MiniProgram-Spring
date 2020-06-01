@@ -6,6 +6,7 @@
     <!-- 可根据自己的需求，是否要使用 -->
     <resultMap type="wechat_shop.Bean.HeaderBean" id="HeaderMap">
         <result property="headerId" column="header_id"/>
+        <result property="userId" column="user_id"/>
         <result property="city" column="header_city"/>
         <result property="community" column="header_community"/>
         <result property="phoneNumber" column="header_phone_number"/>
@@ -15,9 +16,23 @@
     </resultMap>
 
     <select id="selectAllHeader" resultMap="HeaderMap">
-		select * from header
+		select * from header order by user_id asc;
 	</select>
 
-    <select id="selectHeadCommodity" resultMap=""
+    <select id="selectHeadByUserId" resultMap="HeaderMap">
+        select * from header where user_id=#{userId}
+    </select>
+
+    <select id="selectHeadByHeadId" resultMap="HeaderMap">
+        select * from header where header_id=#{headId}
+    </select>
+
+    <insert id="insertHeadRegiester" parameterType="wechat_shop.Bean.HeaderBean" useGeneratedKeys="true" keyProperty="headerId" >
+        insert into header
+        (user_id,header_city,header_community,header_phone_number,header_registered_time,header_longitude,header_latitude)
+        values (
+        #{userId},#{city},#{community},#{phoneNumber},#{registeredTime},#{longitude},#{latitude}
+        )
+    </insert>
 
 </mapper>

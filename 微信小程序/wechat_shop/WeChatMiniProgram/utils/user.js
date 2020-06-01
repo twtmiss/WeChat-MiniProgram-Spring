@@ -5,6 +5,20 @@
 // const util = require('../utils/util.js');
 // const api = require('../config/api.js');
 
+// 用户登录
+// 从缓存获取userInfo,为空用户未登录,进行登录,不为空已登录
+function userLogin(){
+  console(wx.getStorageSync('userInfo'))
+  // if (wx.getStorageSync('userInfo') && wx.getStorageSync('token')) {
+  //   console(wx.getStorageSync('userInfo'))
+  //   } else {
+      
+  //   }
+}
+
+
+
+
 
 // /**
 //  * 调用微信登录

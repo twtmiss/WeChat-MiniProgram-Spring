@@ -1,0 +1,59 @@
+/* pages/activity/editactivity/editactivity.wxss */
+
+page{
+  height: 100%;
+  width: 100%;
+  background: #fff;
+}
+
+.page_view{
+  width: 100%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  font-size: 26rpx;
+  overflow: hidden;
+  /* padding-bottom: 3%;  */
+}
+/* 商品列表 */
+scroll-view{
+  height: 100%;
+}
+.view_class{
+  width: 100%;
+  height: 100%;
+  background: #fff
+}
+
+.form_class{
+  width: 100%;
+  height: 100%;
+  background: #fff
+}
+.textarea_class{
+  width: 100%;
+  height: 90%;
+  background: #fbfbfb
+}
+.button_view{
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center;
+  /* position:fixed;
+  bottom: 5px; */
+  width: 100%;
+}
+
+.create_button{
+  height: 6%;
+  margin: 3% 3% 3% 3%;
+  width: 94%;
+  /* background: #91c7ff; */
+  /* border-radius: 20rpx; */
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center;
+  /* color: #fff; */
+}

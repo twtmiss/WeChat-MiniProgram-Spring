@@ -7,6 +7,7 @@ function VtuComponent(vtuOptions = {}) {
     },
     externalClasses:  ['v-class'].concat(vtuOptions.externalClasses || [])
   })
+
   if (vtuOptions.behaviors && vtuOptions.behaviors.length > 0) {
     let behaviors = []
     vtuOptions.behaviors.forEach(item => {
@@ -23,12 +24,17 @@ function VtuComponent(vtuOptions = {}) {
       vtuOptions.behaviors = behaviors
     })
   }
+
   if(!vtuOptions.behaviors) vtuOptions.behaviors = []
   // 基础混入对象
   vtuOptions.behaviors.push(Behavior(basic()))
   // 当前组件混入对象
   if (vtuOptions.behavior) {
     vtuOptions.behaviors.push(Behavior(vtuOptions.behavior))
+  }
+  // 当前组件混入对象
+  if (vtuOptions.builtBehaviors) {
+    vtuOptions.behaviors.push(vtuOptions.builtBehaviors)
   }
 
   Component(vtuOptions);

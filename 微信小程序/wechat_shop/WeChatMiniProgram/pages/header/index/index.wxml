@@ -1,0 +1,10 @@
+<!--pages/header/index/index.wxml-->
+<i-cell-group>
+    <i-cell title="文章" bind:click="bind_activity"></i-cell>
+    <i-cell title="订单" bind:click="bind_order"></i-cell>
+    <i-cell title="商品" bind:click="bind_commodity"></i-cell>
+    <!-- <i-cell title="只有 footer 点击有效" is-link url="/pages/dashboard/index" only-tap-footer></i-cell>
+    <i-cell title="开关">
+        <switch slot="footer" checked />
+    </i-cell> -->
+</i-cell-group>

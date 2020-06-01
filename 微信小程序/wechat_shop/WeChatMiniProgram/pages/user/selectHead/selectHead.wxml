@@ -1,0 +1,37 @@
+<view class="page-body">
+  <view class="page-section page-section-gap">
+    <map
+      id="myMap"
+      style="width: 100%; height: 300px;"
+      latitude="{{userLatitude}}"
+      longitude="{{userLongitude}}"
+      markers="{{markers}}"
+      covers="{{covers}}"
+      bindmarkertap="backup"
+      bindcallouttap="backup"
+      show-location
+    ></map>
+  </view>
+  <view class="btn-area">
+    <view class="head_view">
+    <view class="head_menu1">
+      <view class="head_menu1_im">
+        <image style="border-radius: 100rpx;" src="{{avatarUrl}}"></image>
+      </view>
+      <view class="head_menu1_m">
+        <view class="head_menu1_m_nick">
+          <text>{{nickName}}</text>
+          <view class="head_menu1_m_nick_nameplateim">
+            团长
+          </view>
+        </view>
+        <text style="  margin-left: 10rpx; ">地址：{{city}} - {{community}}</text>
+        <text style="  margin-left: 10rpx; ">联系电话：{{phoneNumber}}</text>
+      </view>
+    </view>
+  </view>
+  </view>
+
+  <view><button bindtap="bakcuptap" data-headId="{{headId}}" data-nickname="{{nickName}}" data-phone="{{phoneNumber}}" data-avatar="{{avatarUrl}}">确定</button></view>
+
+</view>

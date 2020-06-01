@@ -1,0 +1,48 @@
+<!--pages/commodity/postCommodity/postCommodity.wxml-->
+
+<!-- 商品列表 -->
+<view>
+
+  <!-- 商品卡片 -->
+  <view class="card">
+    <!-- <view class="card_title">商品图片</view> -->
+    <i-panel title="商品展示图片">
+      <view class="card_imgPicker">
+        <vtu-imgPicker count="11"  list="{{ commodityImgUrl }}"> </vtu-imgPicker>
+      </view>
+    </i-panel>
+  </view>
+
+  <!-- 商品卡片 -->
+  <view class="card">
+    <i-panel title="商品信息">
+      <i-input value="{{ commodityName }}" title="商品名称" autofocus placeholder="（必填）" />
+      <i-input value="{{ commodityDescription }}" type="textarea" title="商品描述" placeholder="(选填 最多50字)" maxlength="50"/>
+      <i-input value="{{ commodityDetails }}" title="商品详情" autofocus placeholder="（必填）" />
+    </i-panel>
+
+  </view>
+
+  <!-- 商品卡片 -->
+  <view class="card">
+    <i-panel title="商品规格" wx:for="{{specification}}" >
+      <view class="card_imgPicker">
+        <vtu-imgPicker count="1" list="{{ item.specificationImgUrl}}"> </vtu-imgPicker>
+      </view>
+      <i-input value="{{ item.specificationName }}" title="规格名称" autofocus placeholder="（必填）" />
+       <i-input value="{{ item.specificationDetail }}" title="规格描述" autofocus placeholder="（必填）" />
+      <i-input value="{{ item.specificationNumber }}" type="number" title="库存数量" placeholder="(两位小数)"/>
+      <i-input value="{{ item.specificationPrice }}" type="number" title="价格" placeholder="(两位小数)"/>
+    </i-panel>
+    <!-- 添加规格按钮 -->
+    <view class="button_view">
+      <i-icon type="add" size="28" color="#f8f8f9" />
+    </view>
+  </view>
+
+</view>
+
+<view class="create_button" bindtap="createActivity">
+  发布商品
+</view>
+

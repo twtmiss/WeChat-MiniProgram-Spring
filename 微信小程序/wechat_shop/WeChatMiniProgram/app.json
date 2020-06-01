@@ -1,16 +1,24 @@
 {
   "pages": [
     
+    
     "pages/home/home",
-    "pages/user/order/order",
-    
-    "pages/shopping/settlement/settlement",
-    "pages/shopping/shopping/shopping",
-    "pages/productDetail/productDetail",
-    
-    "pages/selectHead/selectHead",
-    "pages/activity/activity",
+    "pages/activity/viewActivity/viewActivity",
+    "pages/activity/activity/activity",
+    "pages/activity/editActivity/editActivity",
+    "pages/activity/activityList/activityList",
+    "pages/commodity/listCommodity/listCommodity",
+    "pages/commodity/postCommodity/postCommodity",
+    "pages/commodity/viewCommodity/viewCommodity",
+    "pages/order/confirm/confirm",
+    "pages/order/listOrder/listOrder",
+    "pages/order/order/order",
+    "pages/header/register/register",
+    "pages/header/index/index",
+    "pages/user/cart/cart",
+    "pages/user/selectHead/selectHead",
     "pages/user/user/mine"
+
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -30,7 +38,7 @@
     "color": "#666",
     "list": [
       {
-        "pagePath": "pages/activity/activity",
+        "pagePath": "pages/activity/viewActivity/viewActivity",
         "iconPath": "static/icons/ic_menu_choice_nor.png",
         "selectedIconPath": "static/icons/ic_menu_choice_pressed.png",
         "text": "活动"
@@ -42,7 +50,7 @@
         "text": "首页"
       },
       {
-        "pagePath": "pages/shopping/shopping/shopping",
+        "pagePath": "pages/user/cart/cart",
         "iconPath": "static/icons/ic_menu_shoping_nor.png",
         "selectedIconPath": "static/icons/ic_menu_shoping_pressed.png",
         "text": "购物车"

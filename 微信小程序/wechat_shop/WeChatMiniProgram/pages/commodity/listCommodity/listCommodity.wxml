@@ -1,0 +1,36 @@
+<!--pages/commodity/listCommodity/listCommodity.wxml-->
+
+<view class="page_view">
+  <scroll-view scroll-y="true">
+    <view class="activity_list" wx:for="{{commodityList}}" wx:for-index="index" wx:for-item="item" >
+
+      <view class="activity_view" bindtap="bingActivity" data-commodityId="{{item.commodityId}}">
+        <view class="activity_image">
+          <image src="{{item.commodityImgUrl}}" mode="aspectFit"></image>
+        </view>
+        <view class="activity_markdown">
+          <view class="markdown">
+            {{item.commodityName}}
+          </view>
+        </view>
+      </view>
+
+      <view class="butn">
+        <view class="view_button" hover-class="view_hover" hover-start-time="20" hover-stay-time="100" bindtap="bindButton" data-commodityId="{{item.commodityId}}" data-btn="1">
+        删除
+        </view>
+        <!-- <view class="view_button" hover-class="view_hover" hover-start-time="20" hover-stay-time="100" bindtap="bindButton" data-commodityId="{{item.commodityId}}" data-btn="2">
+        {{item.isShow==1?"显示":"隐藏"}}
+        </view> -->
+        <view class="view_button" hover-class="view_hover" hover-start-time="20" hover-stay-time="100" bindtap="bindButton" data-commodityId="{{item.commodityId}}" data-btn="3">
+        编辑
+        </view>
+      </view>
+
+    </view>
+  </scroll-view>
+</view>
+
+<view class="create_button" bindtap="createActivity">
+  发布商品
+</view>

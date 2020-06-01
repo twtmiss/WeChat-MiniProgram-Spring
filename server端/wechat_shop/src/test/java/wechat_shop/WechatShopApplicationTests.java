@@ -9,8 +9,8 @@ class WechatShopApplicationTests {
 
     @Test
     void contextLoads() {
-        HeaderServiceImpl headerService = new HeaderServiceImpl();
-        headerService.getHeaderList();
+//        HeaderServiceImpl headerService = new HeaderServiceImpl();
+//        headerService.getHeaderList();
     }
 
 }
