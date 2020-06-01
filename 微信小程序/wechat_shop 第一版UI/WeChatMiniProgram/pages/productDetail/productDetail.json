@@ -1,8 +1,0 @@
-{
-  "usingComponents": {
-        "i-sticky": "/a_plugin/iview/sticky/index",
-        "i-sticky-item": "/a_plugin/iview/sticky-item/index",
-        "i-tabs": "/a_plugin/iview/tabs/index",
-        "i-tab": "/a_plugin/iview/tab/index"
-  }
-}
