@@ -4,21 +4,23 @@ page{
   height: 100%;
   width: 100%;
 }
+
 .activity_view{
   height: 100%;
   width: 100%;
-  /* background: black; */
+  background: #F3F3F3;
 }
 
 .acfi_view{
   height:300px;
   width: auto;
   margin:30px 30px 30px 30px;
-  /* background: white; */
+  background: white;
   display: flex;
   flex-flow: column;
   justify-content: center;
-
+  border-radius: 20rpx;
+  overflow: hidden;
 }
 
 .ac_view{

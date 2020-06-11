@@ -6,7 +6,7 @@
     <view class="ac_view" id="view{{index}}" hover-start-time="5" hover-stay-time="5" hover-class="ac_hover_view" bindtap="haha" data-clickindex="{{index}}" wx:if="{{item.isShow==0?false:true}}">
       <!-- <image src="{{item.imgsrc}}" style="height:{{item.style.img_style.height}};width:100%"> </image>
       <rich-text nodes="{{item.nodes}}" bindtap="tap" space="true"></rich-text> -->
-      <image src="{{item.coverImgUrl}}" mode="aspectFit" style="height:100%;width:100%"> </image>
+      <image src="{{item.coverImgUrl}}" mode="scaleToFill" style="height:100%;width:100%"> </image>
     </view>
   </view>
 </scroll-view>
@@ -14,7 +14,7 @@
 <scroll-view style="position:fixed; top: {{scr_top}}px; width: {{scr_width}}px; height:{{scr_height}}px;   margin:0px 0px 0px {{scr_marginleft}}px;border-radius: 20rpx; animation:{{scroll_animation}} 0.4s infinite alternate; animation-fill-mode: forwards; animation-play-state: {{js_animation_play_state}}" wx:if="{{scr_ifIs}}" hidden="{{scr_hidden}}" scroll-y="true" bindscrolltoupper="eh">
   <view style="height:66%;width:100%;justify-content: center;display: flex;">
     <!-- <image src="{{response.activity[activityClickIndex].imgsrc}}" style="height:100%;width:100%;"></image> -->
-    <image src="{{activityList[activityClickIndex].coverImgUrl}}" mode="aspectFit" style="height:100%;width:100%;"/>
+    <image src="{{activityList[activityClickIndex].coverImgUrl}}" mode="scaleToFill" style="height:100%;width:100%;"/>
   </view>
 
   <view style="margin:0px 20px 20px 20px;animation:{{scroll_rich_animation}} 2s;animation-fill-mode: forwards;background:#000">

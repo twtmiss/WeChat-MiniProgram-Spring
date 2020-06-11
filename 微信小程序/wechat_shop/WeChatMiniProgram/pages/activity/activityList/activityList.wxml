@@ -6,7 +6,7 @@
 
       <view class="activity_view" bindtap="bingActivity" data-articleId="{{item.articleId}}">
         <view class="activity_image">
-          <image src="{{item.coverImgUrl}}" mode="aspectFit"></image>
+          <image src="{{item.coverImgUrl}}" mode="scaleToFill"></image>
         </view>
         <view class="activity_markdown">
           <view class="markdown">
